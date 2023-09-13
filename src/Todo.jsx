@@ -20,10 +20,31 @@
 
 
 // Option 2
-export default function Todo({ task, isDone }) {
-  if (isDone) {
-    return <li>{task}: this task is Finished</li>;
-  }
+// export default function Todo({ task, isDone }) {
+//   if (isDone) {
+//     return <li>{task}: this task is Finished</li>;
+//   }
 
-  return <li>{task}: Let's DO it</li>;
+//   return <li>{task}: Let's DO it</li>;
+// }
+
+
+//Method 3 : Ternary Operator
+
+// export default function Todo({task,isDone}){
+//     return(
+//         <li>{isDone?'Finished':'Working on'} {task}</li>
+//     )
+// }
+
+// export default function Todo({task,isDone}){
+//     return(
+//         <li>{task} {isDone && ": Done"}</li>
+//     )
+// }
+
+export default function Todo({task,isDone}){
+    return(
+        <li>{task} {isDone || ": Working on"}</li>
+    )
 }

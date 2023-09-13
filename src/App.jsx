@@ -3,8 +3,18 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Todo from "./Todo";
+import Actor from "./Actor";
+import Singers from "./Singers";
 
 function App() {
+  const actors =["shakib khan","Salman khan","Bappa Raz","Manna","Shoriful raj"]
+ const singers = [
+  {name:"Dr.mahfuzur rahman", age:38},
+  {name:"Hero alom ", age:27},
+  {
+    name:"Pritom Hasan",age:28
+  }
+ ]
   return (
     <>
       <h1>React</h1>
@@ -20,9 +30,21 @@ function App() {
     
       <Devices2 name={"TV"} price={"10000"} country={"Bangladesh"}></Devices2> */}
 
-      <Todo task={"learn react"} isDone={true}></Todo>
-      <Todo task={"Help people"} isDone={false}></Todo>
-      <Todo task={"Get rich"} isDone={true}></Todo>
+      {/* <Todo task={"learning react"} isDone={true}></Todo>
+      <Todo task={"Helping people"} isDone={false}></Todo>
+      <Todo task={"Getting rich"} isDone={true}></Todo> */}
+
+      <Actor name={"Zayed Khan"}></Actor>
+
+      {
+        actors.map(actor => <Actor name={actor}></Actor>)
+      }
+
+      {
+        singers.map(singer => <Singers singer={singer}></Singers>)
+      }
+
+
     </>
   );
 }
